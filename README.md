@@ -6,13 +6,13 @@ Get and output information about 20 most trending repositories from Github for t
 
 Example of script launch on Linux, Python 3.5:
 
-```python
+```bash
 $ python github_trending.py
 ```
 
 ## Output example:
 
-```python
+```bash
 $ python github_trending.py
 Information about 20 most trending repositories:
 Project stars:   1561 name: teachable-machine              open issues:     0 URL: https://github.com/googlecreativelab/teachable-machine
