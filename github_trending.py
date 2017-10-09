@@ -13,16 +13,12 @@ def get_trending_repositories(count_of_repo=20, days_ago_count=7):
     return response
 
 
-def generate_normal_issues_list(issues):
-    issues_list = [issue for issue in issues if not issue.get('pull_request')]
-    return issues_list
-
-
 def get_open_issues_amount(repo_owner, repo_name):
     api_url = 'https://api.github.com'
     request_url = '{}/repos/{}/{}/issues'.format(api_url, repo_owner, repo_name)
     response = requests.get(request_url).json()
-    open_issues_amount = len(generate_normal_issues_list(response))
+    issues_list = [issue for issue in response if not issue.get('pull_request')]
+    open_issues_amount = len(issues_list)
     return open_issues_amount
 
 
